@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+<h1>Unit Converter</h1>
+<form th:action="@{/convert}" method="get">
+    <label for="type">Type:</label>
+    <select id="type" name="type">
+        <option value="Length">Length</option>
+        <option value="Temperature">Temperature</option>
+        <option value="Weight">Weight</option>
+    </select>
+    <br>
+    <label for="value">Value:</label>
+    <input type="number" id="value" name="value" required>
+    <br>
+    <label for="from">From:</label>
+    <input type="text" id="from" name="from" required>
+    <br>
+    <label for="to">To:</label>
+    <input type="text" id="to" name="to" required>
+    <br>
+    <button type="submit">Convert</button>
+</form>
+<p th:text="${result}"></p>
+</body>
+</html>
